@@ -1,4 +1,5 @@
 import CardTrilha from './assets/components/CardTrilha/index'
+import "./App.css"
 
 function App() {
 
