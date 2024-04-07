@@ -5,7 +5,7 @@ function App() {
 
   let listaTrilhas = [
     {
-      nomeTrilha: "Trilha da Lagoinha do Leste",
+      nomeTrilha: "Trilha Lagoinha do Leste",
       cidade: "Florianópolis",
       estado: "SC",
       duracao: 120,
