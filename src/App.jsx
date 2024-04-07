@@ -21,12 +21,11 @@ function App() {
 
  return (
   <div className="container">
-   <HookUseState />
-
-   <h1 className="titulo">Explore trilhas incríveis</h1>
+   <h1 className="titulo">Explore trilhass incríveis</h1>
    {listaTrilhas.map((trilha, index) => (
     <CardTrilha dadosTrilha={trilha} key={index} />
    ))}
+   <HookUseState />
   </div>
  );
 }
