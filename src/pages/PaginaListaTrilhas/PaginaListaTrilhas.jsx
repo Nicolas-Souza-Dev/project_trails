@@ -1,6 +1,6 @@
-import CardTrilha from "../components/CardTrilha";
+import CardTrilha from "../../components/CardTrilha";
 import { useContext } from "react";
-import { TrilhasContext } from "../context/TrilhasContext";
+import { TrilhasContext } from "../../context/TrilhasContext";
 
 function PaginaListaTrilhas() {
  const { trilhas, isLoading } = useContext(TrilhasContext);
