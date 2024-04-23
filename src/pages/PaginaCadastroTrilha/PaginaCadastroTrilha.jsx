@@ -5,7 +5,11 @@ import { TrilhasContext } from "../../context/TrilhasContext";
 import { useNavigate } from "react-router-dom";
 
 function PaginaCadastroTrilha() {
- const { register, handleSubmit } = useForm();
+ const {
+  register,
+  handleSubmit,
+  formState: { errors }
+ } = useForm();
  const { addTrail } = useContext(TrilhasContext);
  const navigate = useNavigate();
 
@@ -37,6 +41,7 @@ function PaginaCadastroTrilha() {
         message: "Este campo aceita no máximo 100 caracteres"
        }
       })}></input>
+     {errors?.nomeTrilha && <p>{errors.nomeTrilha?.message}</p>}
     </div>
     <div>
      <label htmlFor="duracao">Duração estimada (min)</label>
@@ -45,6 +50,7 @@ function PaginaCadastroTrilha() {
       {...register("duracao", {
        required: "Este campo é obrigatório"
       })}></input>
+     {errors?.duracao && <p>{errors.duracao?.message}</p>}
     </div>
     <div>
      <label htmlFor="trajeto">Trajeto (km)</label>
@@ -57,6 +63,7 @@ function PaginaCadastroTrilha() {
         message: "Esse campo aceita no maximo 4 caracteres"
        }
       })}></input>
+     {errors?.trajeto && <p>{errors.trajeto?.message}</p>}
     </div>
     <div>
      <label htmlFor="cidade">Cidade</label>
@@ -69,6 +76,7 @@ function PaginaCadastroTrilha() {
         message: "Este campo aceita no maximo 60 caracteres"
        }
       })}></input>
+     {errors?.cidade && <p>{errors.cidade?.message}</p>}
     </div>
     <div>
      <label htmlFor="estado">Estado</label>
@@ -81,6 +89,7 @@ function PaginaCadastroTrilha() {
         message: "Este campo aceita no maximo 2 caracteres"
        }
       })}></input>
+     {errors?.estado && <p>{errors.estado?.message}</p>}
     </div>
     <div>
      <label htmlFor="nomeUsuario">Nome completo usuário</label>
@@ -92,6 +101,7 @@ function PaginaCadastroTrilha() {
         message: "Este campo aceita no maximo 60 caracteres"
        }
       })}></input>
+     {errors?.nomeUsuario && <p>{errors.nomeUsuario?.message}</p>}
     </div>
     <div>
      <label htmlFor="dificuldade">Dificuldade</label>
@@ -125,6 +135,7 @@ function PaginaCadastroTrilha() {
       {...register("urlImagem", {
        maxLength: { value: 300 }
       })}></input>
+     {errors?.urlImagem && <p>{errors.urlImagem?.message}</p>}
     </div>
     <div className="buttons">
      <button type="submit">Cadastrar</button>
