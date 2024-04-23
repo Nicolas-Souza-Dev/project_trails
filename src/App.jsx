@@ -1,7 +1,11 @@
-import CardTrilha from './assets/components/CardTrilha/index'
-import "./App.css"
+import "./App.css";
+import Header from "./components/Header";
+import { Outlet } from "react-router-dom";
+import { TrilhasContextProvider } from "./context/TrilhasContext";
+import Footer from "../src/components/Footer/footer.jsx";
 
 function App() {
+<<<<<<< HEAD
 
   let listaTrilhas = [
     {
@@ -27,6 +31,15 @@ function App() {
       }
     </div>
   )
+=======
+ return (
+  <TrilhasContextProvider>
+   <Header />
+   <Outlet />
+   <Footer />
+  </TrilhasContextProvider>
+ );
+>>>>>>> feature/semana-13
 }
 
 export default App;
