@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import styles from "./PaginaCadastroTrilha.module.css";
 import { useContext } from "react";
 import { TrilhasContext } from "../../context/TrilhasContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useHistory } from "react-router-dom";
 
 function PaginaCadastroTrilha() {
  const {
@@ -12,6 +12,7 @@ function PaginaCadastroTrilha() {
  } = useForm();
  const { addTrail } = useContext(TrilhasContext);
  const navigate = useNavigate();
+ const history = useHistory();
 
  function sendForm(formValue) {
   console.log(formValue);
@@ -139,7 +140,7 @@ function PaginaCadastroTrilha() {
     </div>
     <div className="buttons">
      <button type="submit">Cadastrar</button>
-     <button>Voltar</button>
+     <button onClick={() => history.goBack()}>Voltar</button>
     </div>
    </form>
   </div>
